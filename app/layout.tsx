@@ -79,12 +79,13 @@ export default function RootLayout({
 </Navbar>
 
 
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+                <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
+
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <p>the website</p>
-            </footer>
+             <footer className="w-full text-center py-8 text-sm text-default-400">
+        © {new Date().getFullYear()} Iyana. All rights reserved.
+      </footer>
           </div>
         </Providers>
       </body>
