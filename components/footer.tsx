@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="w-full mt-10 flex flex-col items-center">
       <div className="flex flex-col items-center gap-4">
-        <h3 className="text-xl font-semibold">Connect with Me</h3>
+        <h4 className="text-xl font-semibold">Connect</h4>
 
         {/* Social Icons */}
         <div className="flex gap-6">
