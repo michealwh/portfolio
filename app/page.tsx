@@ -126,8 +126,8 @@ export default function Portfolio() {
           </h1>
           <p className="text-lg text-default-600">
             I have lots of experience with Software Engineering and Game
-            Development and I'm extremely passionate about my work every step of
-            the way! I am currently looking for{" "}
+            Development and I'm extremely passionate about my work every
+            step of the way! I am currently looking for{" "}
             <span className="text-yellow">full-time</span> and{" "}
             <span className="text-yellow">contracting</span> positions.
           </p>
@@ -199,7 +199,7 @@ export default function Portfolio() {
             {topRow.map((job, i) => (
               <Card
                 key={i}
-                className=" flex flex-col p-6 h-[280px] w-full sm:w-[280px] max-w-[340px] mx-auto rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
@@ -209,7 +209,7 @@ export default function Portfolio() {
                     src={job.logo}
                     width={100}
                     height={100}
-                    className="object-contain mb-4"
+                    className="object-contain mb-4 mx-auto shrink-0"
                   />
 
                   <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
@@ -233,7 +233,7 @@ export default function Portfolio() {
             {bottomRow.map((job, i) => (
               <Card
                 key={i}
-                className=" flex flex-col p-6 h-[280px] w-full sm:w-[280px] max-w-[340px] mx-auto rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
@@ -243,7 +243,7 @@ export default function Portfolio() {
                     src={job.logo}
                     width={100}
                     height={100}
-                    className="object-contain mb-4"
+                    className="object-contain mb-4 mx-auto shrink-0"
                   />
 
                   <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
