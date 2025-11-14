@@ -1,85 +1,295 @@
 "use client";
 
+import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Button } from "@heroui/button";
-import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
-import {Image} from "@heroui/image";
+import { Image } from "@heroui/image";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "@heroui/modal";
+import { useState } from "react";
 import Link from "next/link";
+import Script from "next/script"
 
-export default function Home() {
+export default function Portfolio() {
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+
+  const projects = [
+    {
+      title: "Wave + Buoyancy Emulator",
+      img: "/ocean1.gif",
+      desc: "Used Gerstner's wave equation to generate naturally flowing waves.",
+      details:
+        "Used Gerstner's wave equation incorporating trigonometry to generate naturally flowing waves in a 3D space. Programmed a buoyancy system in Lua to dynamically apply forces to floating objects.",
+      link: "https://x.com/plaggno/status/1864364004048580742",
+    },
+    {
+      title: "Speech Emulator for NPC Dialogue",
+      img: "/images/goblinFurnitureShot.png",
+      desc: "Developed an algorithm that plays speech-like sounds as text shows up progressively.",
+      details:
+        "Developed an algorithm that plays audio as text shows up progressively, reminiscent of Animal Crossing. Programmed the progression of pitch throughout sentences to make the speech sound more natural.",
+      link: "https://x.com/plaggno/status/1861617331287257310",
+    },
+    {
+      title: "Kitchen System",
+      img: "/kecaiMixer.gif",
+      desc: "For Kecai, created a complete Kitchen system with Chefs, Servers, and Customers.",
+      details:
+        "Made over 20 minigames both 2D and 3D for player Chefs to use in order to complete recipes. Connected Customers orders to be sent to the Kitchen. Servers can pick up orders and give them to the client once ready.",
+      link: "https://www.roblox.com/games/5375160701/Work-at-Kecai-Restaurant",
+    },
+    {
+      title: "Reactive Particles",
+      img: "/boidDemo.gif",
+      desc: "Developed a boid algorithm that react's to the player's avatar.",
+      details:
+        "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will stay in their designated box and not run into the avatar.",
+      link: "https://example.com/ad-builder",
+    },
+  ];
+
+  const experiences = [
+    {
+      company: "Danforth Plant Science Center",
+      logo: "/images/danforthlogo.webp",
+      role: "Data Science Intern",
+      period: "Mar 2022 - Jul 2022",
+      desc: "Worked on data analysis pipelines and visualizations for plant research datasets.",
+    },
+    {
+      company: "Bayer",
+      logo: "/images/bayerlogo.webp",
+      role: "Software Engineer Intern",
+      period: "May 2023 - Aug 2023",
+      desc: "Developed backend services and optimized APIs for enterprise applications.",
+    },
+    {
+      company: "World Wide Technology",
+      logo: "/images/wwtlogo.webp",
+      role: "Full-stack Developer Intern",
+      period: "May 2024 - Aug 2024",
+      desc: "Built full-stack web applications for internal tools and dashboards.",
+    },
+    {
+      company: "Veterans United",
+      logo: "/images/vulogo.webp",
+      role: "Software Engineer Intern",
+      period: "May 2025 - Aug 2025",
+      desc: "Implemented features for mortgage software applications and collaborated on system integrations.",
+    },
+    {
+      company: "Kecai",
+      logo: "/images/kecailogo.webp",
+      role: "Gameplay Engineer",
+      period: "Mar 2025 - Present",
+      desc: "Developed gameplay mechanics and interactive systems for multiplayer games.",
+    },
+  ];
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between w-full max-w-5xl gap-10">
-        <div className="flex flex-col items-start gap-5 text-left">
-          <h1 className="text-5xl font-bold tracking-tight">
-            Hey, I'm <span className="text-primary">Micheal</span> 🤠
+      {/* ===== ABOUT SECTION ===== */}
+      <section
+        id="about"
+        className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12 py-20 gap-10"
+      >
+        <div className="flex flex-col gap-6 max-w-lg">
+          <h1 className="text-5xl font-bold tracking-tight leading-tight">
+            Hey, I'm <span className="green">Micheal</span> 👋
           </h1>
-          <p className="text-lg text-default-600 max-w-lg">
-            I'm a Software Developer and Gameplay Engineer.
+          <p className="text-lg text-default-600">
+            I have lots of experience with Software Engineering and Game Development and I'm extremely passionate about my work with every step of the way! I am currently looking for <span className="text-secondary">full-time</span> and <span className="text-secondary">contracting</span> positions.
           </p>
-          <div className="flex gap-3">
-            <Button as={Link} href="#projects" color="primary" variant="shadow">
-              View My Work
-            </Button>
-            <Button as={Link} href="#contact" variant="flat">
-              Get In Touch
-            </Button>
-          </div>
+          <Button
+            as={Link}
+            href="#projects"
+            color="primary"
+            size="lg"
+            variant="shadow"
+          >
+            See My Work
+          </Button>
         </div>
+
+        {/* Visual project image */}
         <Image
-          alt="Profile picture"
-          src="https://via.placeholder.com/250"
-          radius="full"
-          className="w-48 h-48 object-cover"
+          alt="Featured project"
+          src="/ocean2.gif"
+          radius="lg"
+          className="shadow-lg w-full max-w-lg object-cover"
         />
       </section>
 
-      {/* About Section */}
-      <section id="about" className="max-w-4xl text-center flex flex-col items-center gap-4">
-        <h2 className="text-3xl font-semibold">About Me</h2>
-        <p className="text-default-600 max-w-2xl">
-          With experience in brand development, digital marketing, and creative strategy,
-          I help businesses grow their online presence through authentic storytelling
-          and actionable insights.
+      <section
+  id="education"
+  className="w-full py-20 flex justify-center bg-background"
+>
+  <div className="w-full max-w-6xl px-6 md:px-12">
+    <Card
+      className="bg-content2 shadow-xl p-10 flex flex-col md:flex-row items-center gap-10"
+    >
+      {/* School Logo */}
+      <div className="flex-shrink-0">
+        <Image
+          alt="University Logo"
+          src="/images/mizzoulogo.webp" // Replace with your logo path
+          radius="lg"
+          className="w-48 h-48 object-contain"
+        />
+      </div>
+
+      {/* Education Info */}
+      <div className="flex flex-col gap-4 text-center md:text-left max-w-3xl text-white">
+        <h2 className="text-4xl font-bold text-primary">Education</h2>
+        <h3 className="text-2xl font-semibold">University of Missouri - Columbia</h3>
+        <p className="text-lg font-medium">
+          BS in Computer Science, Minor in Business
         </p>
+        <p className="text-gray-300">I am currently in my second-to-last semester of College and will be graduating this May!</p>
+      </div>
+    </Card>
+  </div>
+</section>
+
+
+      {/* ===== EXPERIENCE SECTION ===== */}
+      <section
+        id="experience"
+        className="w-full max-w-6xl px-6 md:px-12 py-20 flex flex-col items-center gap-12"
+      >
+        <h2 className="text-4xl font-semibold text-center">Professional Experience</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 w-full">
+          {experiences.map((job, i) => (
+            <Card key={i} className="flex flex-col items-center text-center p-4">
+              <Image
+                alt={job.company}
+                src={job.logo}
+                width={80}
+                height={80}
+                className="object-contain mb-3"
+              />
+              <h3 className="text-lg font-semibold">{job.company}</h3>
+              <p className="text-sm font-medium text-default-700">{job.role}</p>
+              <p className="text-sm text-default-500 mb-2">{job.period}</p>
+              <p className="text-default-600 text-sm">{job.desc}</p>
+            </Card>
+          ))}
+        </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="max-w-5xl w-full flex flex-col items-center gap-8">
-        <h2 className="text-3xl font-semibold text-center">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-          {[1, 2, 3].map((i) => (
-            <Card key={i} className="shadow-md">
-              <CardHeader className="pb-0">
-                <h3 className="text-xl font-semibold">Project {i}</h3>
-              </CardHeader>
-              <CardBody>
-                <Image
-                  alt={`Project ${i}`}
-                  src={`https://picsum.photos/400/300?random=${i}`}
-                  className="rounded-lg mb-3"
-                />
-                <p className="text-default-600">
-                  A short description of what this project is about and what you accomplished.
-                </p>
+      {/* ===== PROJECTS SECTION ===== */}
+      <section
+        id="projects"
+        className="w-full max-w-6xl px-6 md:px-12 py-20 flex flex-col items-center gap-12"
+      >
+        <h2 className="text-4xl font-semibold text-center">Projects</h2>
+
+
+        <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
+
+      <Card className="w-full p-6 rounded-2xl bg-content2">
+        <CardBody>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+
+            {/* LEFT COLUMN – TITLE + DESCRIPTION */}
+            <div>
+              <h2 className="text-2xl font-bold mb-2">
+                Here's a Speech Emulator I made!
+              </h2>
+
+              <p className="text-default-600">
+                I developed an algorithm that plays audio as text shows up progressively, reminiscent of Animal Crossing. 
+                Every character is mapped to a specific type of sound and specifc pitch. This way if the character says the same thing twice it sounds like they said the same thing. I also programmed the progression of pitch throughout sentences to make the speech sound more natural. All of this was to simulate what a language sounds like when spoken.
+              </p>
+            </div>
+
+            {/* RIGHT COLUMN – VIDEO EMBED */}
+            <div className="w-full">
+              {/* YouTube Embed */}
+              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-xl"
+                  src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+                  title="YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
+        </CardBody>
+      </Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+          {projects.map((proj, i) => (
+            <Card
+              key={i}
+              isPressable
+              onPress={() => setSelectedProject(proj)}
+              className="hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
+              <Image
+                alt={proj.title}
+                src={proj.img}
+                radius="lg"
+                className="object-cover w-full h-64"
+              />
+              <CardBody className="flex flex-col items-start gap-3 p-5">
+                <h3 className="text-2xl font-semibold">{proj.title}</h3>
+                <p className="text-default-600 text-sm">{proj.desc}</p>
               </CardBody>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="max-w-3xl text-center flex flex-col items-center gap-4">
-        <h2 className="text-3xl font-semibold">Let’s Connect</h2>
-        <p className="text-default-600 max-w-xl">
-          Interested in collaborating or just want to say hi? I'd love to hear from you.
-        </p>
-        <Button as={Link} href="mailto:michealwhaley42@gmail.com" color="primary" variant="shadow">
-          Say Hello 👋
-        </Button>
-      </section>
-
-      {/* Footer */}
+      {/* ===== PROJECT MODAL ===== */}
+      <Modal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        size="lg"
+        scrollBehavior="inside"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-2">
+                {selectedProject?.title}
+              </ModalHeader>
+              <ModalBody>
+                <Image
+                  alt={selectedProject?.title}
+                  src={selectedProject?.img}
+                  radius="lg"
+                  className="object-cover w-full h-64 mb-4"
+                />
+                <p className="text-default-600">{selectedProject?.details}</p>
+              </ModalBody>
+              <ModalFooter>
+                {selectedProject?.link && (
+                  <Button
+                    as={Link}
+                    href={selectedProject.link}
+                    color="primary"
+                    variant="shadow"
+                    target="_blank"
+                  >
+                    Visit Project
+                  </Button>
+                )}
+                <Button variant="flat" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   );
 }

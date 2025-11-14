@@ -51,44 +51,20 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar
-  shouldHideOnScroll
-  classNames={{
-    base: "flex justify-center items-center",
-    wrapper: "justify-center", // <-- This is the important one
-  }}
->
-  <NavbarContent justify="center" className="flex justify-center gap-6">
-    <NavbarItem>
-      <Link color="foreground" href="#">
-        Home
-      </Link>
-    </NavbarItem>
-    <NavbarItem isActive>
-      <Link aria-current="page" href="#">
-        Projects
-      </Link>
-    </NavbarItem>
-    <NavbarItem>
-      <Link color="foreground" href="#">
-        About
-      </Link>
-    </NavbarItem>
-  </NavbarContent>
-</Navbar>
 
 
                 <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
 
               {children}
-            </main>
-             <footer className="w-full text-center py-8 text-sm text-default-400">
-        © {new Date().getFullYear()} Iyana. All rights reserved.
+              <footer className="w-full text-center py-8 text-sm text-default-400">
+        © {new Date().getFullYear()} Micheal — Built with whimsy using HeroUI +
+        Next.js
       </footer>
-          </div>
+            </main>
+             
         </Providers>
       </body>
+      
     </html>
   );
 }
