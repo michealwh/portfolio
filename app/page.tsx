@@ -126,7 +126,7 @@ export default function Portfolio() {
           </h1>
           <p className="text-lg text-default-600">
             I have lots of experience with Software Engineering and Game
-            Development and I'm extremely passionate about my work with every
+            Development and I'm extremely passionate about my work every
             step of the way! I am currently looking for{" "}
             <span className="text-yellow">full-time</span> and{" "}
             <span className="text-yellow">contracting</span> positions.
