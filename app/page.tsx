@@ -21,7 +21,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Wave + Buoyancy Emulator",
-      img: "/ocean1.gif",
+      img: "./ocean1.gif",
       desc: "Used Gerstner's wave equation to generate naturally flowing waves.",
       details:
         "Used Gerstner's wave equation incorporating trigonometry to generate naturally flowing waves in a 3D space. Programmed a buoyancy system in Lua to dynamically apply forces to floating objects.",
@@ -29,7 +29,7 @@ export default function Portfolio() {
     },
     {
       title: "Reactive Particles",
-      img: "/boidDemo.gif",
+      img: "./boidDemo.gif",
       desc: "Developed a boid algorithm that react's to the player's avatar.",
       details:
         "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will stay in their designated box and not run into the avatar.",
@@ -38,14 +38,14 @@ export default function Portfolio() {
 
     {
       title: "Kitchen System",
-      img: "/kecaiMixer.gif",
+      img: "./kecaiMixer.gif",
       desc: "For Kecai, created a complete Kitchen system with Chefs, Servers, and Customers.",
       details:
         "Made over 20 minigames both 2D and 3D for player Chefs to use in order to complete recipes. Connected Customers orders to be sent to the Kitchen. Servers can pick up orders and give them to the client once ready.",
     },
     {
       title: "Profile Editor",
-      img: "/kecaiProfileDemo.gif",
+      img: "./kecaiProfileDemo.gif",
       desc: "For Kecai, developed an editor for user's profile with several components of customization.",
       details:
         "User can edit their description, pronouns, background image, the list goes on. Something I liked that I was able to add was an editable color gradient the user can apply to their profile.",
@@ -55,7 +55,7 @@ export default function Portfolio() {
   const experiences = [
     {
       company: "Danforth Plant Science Center",
-      logo: "/images/danforthlogo2.webp",
+      logo: "./images/danforthlogo2.webp",
       role: "Data Science Intern",
       period: "Mar 2022 - Jul 2022",
       desc: "Programmed Python workflow modules to analyze data from plant images.",
@@ -66,7 +66,7 @@ export default function Portfolio() {
     },
     {
       company: "Bayer",
-      logo: "/images/bayerlogo.webp",
+      logo: "./images/bayerlogo.webp",
       role: "Software Engineer Intern",
       period: "May 2023 - Aug 2023",
       desc: "Developed new internal web components using React and Vue Javascript libraries.",
@@ -77,7 +77,7 @@ export default function Portfolio() {
     },
     {
       company: "World Wide Technology",
-      logo: "/images/wwtlogo2.webp",
+      logo: "./images/wwtlogo2.webp",
       role: "Full-stack Developer Intern",
       period: "May 2024 - Aug 2024",
       desc: "Programmed in Vue along with using SQL for backend support.",
@@ -88,7 +88,7 @@ export default function Portfolio() {
     },
     {
       company: "Veterans United",
-      logo: "/images/vulogo2.webp",
+      logo: "./images/vulogo2.webp",
       role: "Software Engineer Intern",
       period: "May 2025 - Aug 2025",
       desc: "Migrated legacy C# services into a new system architecture.",
@@ -99,7 +99,7 @@ export default function Portfolio() {
     },
     {
       company: "Kecai",
-      logo: "/images/kecailogo.webp",
+      logo: "./images/kecailogo.webp",
       role: "Gameplay Engineer",
       period: "Mar 2025 - Present",
       desc: "Developed gameplay mechanics and interactive systems for multiplayer games.",
@@ -145,7 +145,7 @@ export default function Portfolio() {
         {/* Visual project image */}
         <Image
           alt="Featured project"
-          src="/ocean2.gif"
+          src="./ocean2.gif"
           radius="lg"
           className="shadow-lg w-full max-w-lg object-cover"
         />
@@ -161,7 +161,7 @@ export default function Portfolio() {
             <div className="flex-shrink-0">
               <Image
                 alt="University Logo"
-                src="/images/mizzoulogo.webp" // Replace with your logo path
+                src="./images/mizzoulogo.webp" // Replace with your logo path
                 radius="lg"
                 className="w-48 h-48 object-contain"
               />
@@ -177,7 +177,7 @@ export default function Portfolio() {
                 BS in Computer Science, Minor in Business
               </p>
               <p className="text-default-500">
-                I am currently a senior and will be graduating this May!
+                I am currently a senior and will be graduating in May 2026.
               </p>
             </div>
           </Card>
@@ -270,11 +270,6 @@ export default function Portfolio() {
         className="w-full max-w-6xl px-6 md:px-12 py-20 flex flex-col items-center gap-12"
       >
         <h2 className="text-4xl font-semibold text-center">Projects</h2>
-
-        <Script
-          src="https://platform.twitter.com/widgets.js"
-          strategy="lazyOnload"
-        />
 
         <Card className="w-full p-6 rounded-2xl bg-content2">
           <CardBody>
