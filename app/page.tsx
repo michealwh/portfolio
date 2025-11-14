@@ -32,23 +32,23 @@ export default function Portfolio() {
       img: "./boidDemo.gif",
       desc: "Developed a boid algorithm that react's to the player's avatar.",
       details:
-        "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will stay in their designated box and not run into the avatar.",
+        "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will attempt to stay in their designated zone and avoid the player.",
       link: "https://www.roblox.com/games/18242072567/Boid-Particle-Demo",
     },
 
     {
-      title: "Kitchen System",
+      title: "Cooking System",
       img: "./kecaiMixer.gif",
-      desc: "For Kecai, created a complete Kitchen system with Chefs, Servers, and Customers.",
+      desc: "For Kecai, created a complete cooking system with a chef queue, recipes, and minigames.",
       details:
-        "Made over 20 minigames both 2D and 3D for player Chefs to use in order to complete recipes. Connected Customers orders to be sent to the Kitchen. Servers can pick up orders and give them to the client once ready.",
+        "Chefs queue up using a UI overview to recieve an order. The chef then can play through over 10 minigames both 2D and 3D as they work through the steps of the recipe to prepare the meal!",
     },
     {
       title: "Profile Editor",
       img: "./kecaiProfileDemo.gif",
       desc: "For Kecai, developed an editor for user's profile with several components of customization.",
       details:
-        "User can edit their description, pronouns, background image, the list goes on. Something I liked that I was able to add was an editable color gradient the user can apply to their profile.",
+        "User can edit their description, pronouns, background image, and much more. Something I liked that I was able to add was an editable two-color gradient the user can apply to their profile.",
     },
   ];
 
@@ -61,7 +61,7 @@ export default function Portfolio() {
       desc: "Programmed Python workflow modules to analyze data from plant images.",
       bullets: [
         "Programmed Python workflow modules to analyze and extract data from plant images using PlantCV.",
-        "Made graphs of data from CSV files formed by workflow modules using R from experiment analyses.",
+        "Made graphs of data using R based off experiment results from CSV tables.",
       ],
     },
     {
@@ -282,7 +282,7 @@ export default function Portfolio() {
 
                 <p className="text-default-600">
                   I developed an algorithm that plays audio as text shows up
-                  progressively, reminiscent of Animal Crossing. Every character
+                  progressively, reminiscent of games like Animal Crossing. Every alphabetical letter
                   is mapped to a specific sound and a specifc pitch. This way if
                   the character says the same thing twice, it sounds like it! I
                   also programmed the progression of pitch throughout sentences
@@ -302,7 +302,7 @@ export default function Portfolio() {
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-xl"
                     src="https://www.youtube.com/embed/gQm2lnQOUUo?si=pM25QQC1pvzQ9xA1"
-                    title="YouTube video"
+                    title="Speech Emulator Demo"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
