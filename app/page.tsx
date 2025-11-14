@@ -16,6 +16,7 @@ import Script from "next/script";
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedJob, setSelectedJob] = useState<any>(null);
 
   const projects = [
     {
@@ -27,13 +28,14 @@ export default function Portfolio() {
       link: "https://x.com/plaggno/status/1864364004048580742",
     },
     {
-      title: "Speech Emulator for NPC Dialogue",
-      img: "/images/goblinFurnitureShot.png",
-      desc: "Developed an algorithm that plays speech-like sounds as text shows up progressively.",
+      title: "Reactive Particles",
+      img: "/boidDemo.gif",
+      desc: "Developed a boid algorithm that react's to the player's avatar.",
       details:
-        "Developed an algorithm that plays audio as text shows up progressively, reminiscent of Animal Crossing. Programmed the progression of pitch throughout sentences to make the speech sound more natural.",
-      link: "https://x.com/plaggno/status/1861617331287257310",
+        "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will stay in their designated box and not run into the avatar.",
+      link: "https://www.roblox.com/games/18242072567/Boid-Particle-Demo",
     },
+
     {
       title: "Kitchen System",
       img: "/kecaiMixer.gif",
@@ -42,21 +44,25 @@ export default function Portfolio() {
         "Made over 20 minigames both 2D and 3D for player Chefs to use in order to complete recipes. Connected Customers orders to be sent to the Kitchen. Servers can pick up orders and give them to the client once ready.",
     },
     {
-      title: "Reactive Particles",
-      img: "/boidDemo.gif",
-      desc: "Developed a boid algorithm that react's to the player's avatar.",
+      title: "Profile Editor",
+      img: "/kecaiProfileDemo.gif",
+      desc: "For Kecai, developed an editor for user's profile with several components of customization.",
       details:
-        "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will stay in their designated box and not run into the avatar.",
+        "User can edit their description, pronouns, background image, the list goes on. Something I liked that I was able to add was an editable color gradient the user can apply to their profile.",
     },
   ];
 
   const experiences = [
     {
       company: "Danforth Plant Science Center",
-      logo: "/images/danforthlogo.webp",
+      logo: "/images/danforthlogo2.webp",
       role: "Data Science Intern",
       period: "Mar 2022 - Jul 2022",
       desc: "Programmed Python workflow modules to analyze data from plant images.",
+      bullets: [
+        "Programmed Python workflow modules to analyze and extract data from plant images using PlantCV.",
+        "Made graphs of data from CSV files formed by workflow modules using R from experiment analyses.",
+      ],
     },
     {
       company: "Bayer",
@@ -64,20 +70,32 @@ export default function Portfolio() {
       role: "Software Engineer Intern",
       period: "May 2023 - Aug 2023",
       desc: "Developed new internal web components using React and Vue Javascript libraries.",
+      bullets: [
+        "Developed new internal web components for Bayer employees using ReactJS and VueJS.",
+        "Enhanced debugging skills by working collaboratively with previous developer's code in a team environment.",
+      ],
     },
     {
       company: "World Wide Technology",
-      logo: "/images/wwtlogo.webp",
+      logo: "/images/wwtlogo2.webp",
       role: "Full-stack Developer Intern",
       period: "May 2024 - Aug 2024",
       desc: "Programmed in Vue along with using SQL for backend support.",
+      bullets: [
+        "Implemented new features for WWT's corporate website using VueJS, including a modernized research footer.",
+        "Supported backend development by writing and running SQL scripts for efficient internal page creation.",
+      ],
     },
     {
       company: "Veterans United",
-      logo: "/images/vulogo.webp",
+      logo: "/images/vulogo2.webp",
       role: "Software Engineer Intern",
       period: "May 2025 - Aug 2025",
       desc: "Migrated legacy C# services into a new system architecture.",
+      bullets: [
+        "Migrated and modernized legacy C# services into a new system architecture.",
+        "Debugged and optimized front-end web components for loan modules using JavaScript.",
+      ],
     },
     {
       company: "Kecai",
@@ -85,6 +103,10 @@ export default function Portfolio() {
       role: "Gameplay Engineer",
       period: "Mar 2025 - Present",
       desc: "Developed gameplay mechanics and interactive systems for multiplayer games.",
+      bullets: [
+        "Designed and developed engaging 2D and 3D puzzles for kitchen-themed minigames using Lua.",
+        "Optimized ordering systems by streamlining logic and accounting for edge cases in Roblox.",
+      ],
     },
   ];
 
@@ -100,14 +122,14 @@ export default function Portfolio() {
       >
         <div className="flex flex-col gap-6 max-w-lg">
           <h1 className="text-5xl font-bold tracking-tight leading-tight">
-            Hey, I'm <span className="green">Micheal</span> 👋
+            Hello, I'm <span className="text-yellow">Micheal</span> ☀️
           </h1>
           <p className="text-lg text-default-600">
             I have lots of experience with Software Engineering and Game
             Development and I'm extremely passionate about my work with every
             step of the way! I am currently looking for{" "}
-            <span className="text-secondary">full-time</span> and{" "}
-            <span className="text-secondary">contracting</span> positions.
+            <span className="text-yellow">full-time</span> and{" "}
+            <span className="text-yellow">contracting</span> positions.
           </p>
           <Button
             as={Link}
@@ -155,8 +177,7 @@ export default function Portfolio() {
                 BS in Computer Science, Minor in Business
               </p>
               <p className="text-default-500">
-                I am currently a senior and will
-                be graduating this May!
+                I am currently a senior and will be graduating this May!
               </p>
             </div>
           </Card>
@@ -172,74 +193,75 @@ export default function Portfolio() {
           Professional Experience
         </h2>
 
-  <div className="w-full flex flex-col items-center gap-10">
+        <div className="w-full flex flex-col items-center gap-10">
+          {/* ---------- TOP ROW: ALWAYS 3 ITEMS ---------- */}
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            {topRow.map((job, i) => (
+              <Card
+                key={i}
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                isPressable
+                onPress={() => setSelectedJob(job)}
+              >
+                <div className="flex flex-col flex-1 items-center text-center">
+                  <Image
+                    alt={job.company}
+                    src={job.logo}
+                    width={100}
+                    height={100}
+                    className="object-contain mb-4"
+                  />
 
-    {/* ---------- TOP ROW: ALWAYS 3 ITEMS ---------- */}
-    <div className="flex flex-wrap justify-center gap-6 w-full">
-      {topRow.map((job, i) => (
-        <Card
-          key={i}
-          className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm"
-        >
-          <div className="flex flex-col flex-1 items-center text-center">
-            <Image
-              alt={job.company}
-              src={job.logo}
-              width={100}
-              height={100}
-              className="object-contain mb-4"
-            />
+                  <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
+                    {job.company}
+                  </h3>
 
-            <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
-              {job.company}
-            </h3>
+                  <p className="text-sm font-medium text-default-700 leading-snug px-3">
+                    {job.role}
+                  </p>
 
-            <p className="text-sm font-medium text-default-700 leading-snug px-3">
-              {job.role}
-            </p>
-
-            <p className="text-sm text-default-500 mt-auto pt-4">
-              {job.period}
-            </p>
+                  <p className="text-sm text-default-500 mt-auto pt-4">
+                    {job.period}
+                  </p>
+                </div>
+              </Card>
+            ))}
           </div>
-        </Card>
-      ))}
-    </div>
 
-    {/* ---------- BOTTOM ROW: ALWAYS 2 ITEMS ---------- */}
-    <div className="flex flex-wrap justify-center gap-6 w-full">
-      {bottomRow.map((job, i) => (
-        <Card
-          key={i}
-          className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm"
-        >
-          <div className="flex flex-col flex-1 items-center text-center">
-            <Image
-              alt={job.company}
-              src={job.logo}
-              width={100}
-              height={100}
-              className="object-contain mb-4"
-            />
+          {/* ---------- BOTTOM ROW: ALWAYS 2 ITEMS ---------- */}
+          <div className="flex flex-wrap justify-center gap-6 w-full">
+            {bottomRow.map((job, i) => (
+              <Card
+                key={i}
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+                isPressable
+                onPress={() => setSelectedJob(job)}
+              >
+                <div className="flex flex-col flex-1 items-center text-center">
+                  <Image
+                    alt={job.company}
+                    src={job.logo}
+                    width={100}
+                    height={100}
+                    className="object-contain mb-4"
+                  />
 
-            <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
-              {job.company}
-            </h3>
+                  <h3 className="text-lg font-semibold leading-tight mb-1 px-2">
+                    {job.company}
+                  </h3>
 
-            <p className="text-sm font-medium text-default-700 leading-snug px-3">
-              {job.role}
-            </p>
+                  <p className="text-sm font-medium text-default-700 leading-snug px-3">
+                    {job.role}
+                  </p>
 
-            <p className="text-sm text-default-500 mt-auto pt-4">
-              {job.period}
-            </p>
+                  <p className="text-sm text-default-500 mt-auto pt-4">
+                    {job.period}
+                  </p>
+                </div>
+              </Card>
+            ))}
           </div>
-        </Card>
-      ))}
-    </div>
-
-  </div>
-
+        </div>
       </section>
 
       {/* ===== PROJECTS SECTION ===== */}
@@ -266,11 +288,12 @@ export default function Portfolio() {
                 <p className="text-default-600">
                   I developed an algorithm that plays audio as text shows up
                   progressively, reminiscent of Animal Crossing. Every character
-                  is mapped to a specific type of sound and specifc pitch. This
-                  way if the character says the same thing twice, it sounds like it! I also programmed the progression of
-                  pitch throughout sentences to make the speech sound more
-                  natural. All of this was to simulate what a language sounds
-                  like when spoken.
+                  is mapped to a specific sound and a specifc pitch. This way if
+                  the character says the same thing twice, it sounds like it! I
+                  also programmed the progression of pitch throughout sentences
+                  to make the speech sound more natural. All of this was to
+                  simulate (to a degree) what a language sounds like when
+                  spoken.
                 </p>
               </div>
 
@@ -348,7 +371,59 @@ export default function Portfolio() {
                     variant="shadow"
                     target="_blank"
                   >
-                    Learn More
+                    See More
+                  </Button>
+                )}
+                <Button variant="flat" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={!!selectedJob}
+        onClose={() => setSelectedJob(null)}
+        size="lg"
+        scrollBehavior="inside"
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-2">
+                {selectedJob?.role}
+              </ModalHeader>
+              <ModalBody>
+                <Image
+                  alt={selectedJob?.company}
+                  src={selectedJob?.logo}
+                  radius="lg"
+                  className="object-cover w-20 h-20 mb-4"
+                />
+                <div className="text-default-600 space-y-3">
+                  {selectedJob?.details && <p>{selectedJob.details}</p>}
+
+                  {selectedJob?.bullets && selectedJob.bullets.length > 0 && (
+                    <ul className="list-disc pl-6 space-y-1">
+                      {selectedJob.bullets.map((item: string, i: number) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                {selectedJob?.link && (
+                  <Button
+                    as={Link}
+                    href={selectedJob.link}
+                    color="primary"
+                    variant="shadow"
+                    target="_blank"
+                  >
+                    See More
                   </Button>
                 )}
                 <Button variant="flat" onPress={onClose}>

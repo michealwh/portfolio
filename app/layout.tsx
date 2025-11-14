@@ -40,8 +40,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) 
-{
+}) {
   return (
     <html suppressHydrationWarning lang="en">
       <head />
@@ -52,20 +51,12 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-
-
-                <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
-
-              {children}
-              <footer className="w-full text-center py-8 text-sm text-default-400">
-        © {new Date().getFullYear()} Micheal — Built with whimsy using HeroUI +
-        Next.js
-      </footer>
-            </main>
-             
+          <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
+            {children}
+            
+          </main>
         </Providers>
       </body>
-      
     </html>
   );
 }
