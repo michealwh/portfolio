@@ -158,6 +158,70 @@ export const HeartFilledIcon = ({
   </svg>
 );
 
+export const LinkedinIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zm7.5 0h3.8v2.1h.05c.53-1 1.82-2.1 3.75-2.1 4 0 4.7 2.63 4.7 6v9.5h-4v-8.4c0-2-.03-4.5-2.75-4.5-2.75 0-3.17 2.15-3.17 4.35V24h-4V8.5z"
+      />
+    </svg>
+  );
+};
+
+export const MailIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.236l7.386 5.677a1 1 0 001.228 0L20 8.236V18H4z"
+      />
+    </svg>
+  );
+};
+
+export const XIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      width={size || width}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M18.146 1H21.5l-7.374 8.42L23 23h-6.547l-5.11-6.674L5.5 23H2.146l7.92-9.037L1 1h6.64l4.62 6.154L18.146 1zm-2.308 20.092h1.806L7.937 2.732H6.01l9.828 18.36z"
+      />
+    </svg>
+  );
+};
+
+
 export const SearchIcon = (props: IconSvgProps) => (
   <svg
     aria-hidden="true"

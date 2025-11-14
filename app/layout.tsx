@@ -4,6 +4,7 @@ import { Link } from "@heroui/link";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
+import Footer from "../components/footer"
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
@@ -54,6 +55,7 @@ export default function RootLayout({
           <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
             {children}
             
+        <Footer/>
           </main>
         </Providers>
       </body>
