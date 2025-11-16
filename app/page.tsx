@@ -99,7 +99,7 @@ export default function Portfolio() {
     },
     {
       company: "Kecai",
-      logo: "./images/kecailogo.webp",
+      logo: "./images/kecailogo2.png",
       role: "Gameplay Engineer",
       period: "Mar 2025 - Present",
       desc: "Developed gameplay mechanics and interactive systems for multiplayer games.",
