@@ -46,7 +46,7 @@ export default function Portfolio() {
     {
       title: "Profile Editor",
       img: "./kecaiProfileDemo.gif",
-      desc: "For Kecai, developed an editor for user's profile with several components of customization.",
+      desc: "For Kecai, developed an editor for the user's profile with several components of customization.",
       details:
         "User can edit their description, pronouns, background image, and much more. Something I liked that I was able to add was an editable two-color gradient the user can apply to their profile.",
     },
