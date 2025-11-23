@@ -32,24 +32,6 @@ export default function Footer() {
             <MailIcon size={20} />
           </Link>
 
-          {/* X (Twitter) */}
-          <Link
-            href="https://x.com/plaggno"
-            target="_blank"
-            className="text-default-600 hover:text-primary transition-colors"
-          >
-            <XIcon size={16} />
-          </Link>
-
-          {/* Discord */}
-          <Link
-            href="https://discord.gg/5p4vexVS8V"
-            target="_blank"
-            className="text-default-600 hover:text-primary transition-colors"
-          >
-            <DiscordIcon size={20} />
-          </Link>
-
         </div>
       </div>
     </footer>
