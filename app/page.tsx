@@ -101,7 +101,7 @@ export default function Portfolio() {
       company: "Kecai",
       logo: "./images/kecailogo2.png",
       role: "Gameplay Engineer",
-      period: "Mar 2025 - Present",
+      period: "Mar 2025 - Dec 2025",
       desc: "Developed gameplay mechanics and interactive systems for multiplayer games.",
       bullets: [
         "Designed and developed engaging 2D and 3D puzzles for kitchen-themed minigames using Lua.",
