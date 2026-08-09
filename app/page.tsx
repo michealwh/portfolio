@@ -44,11 +44,12 @@ export default function Portfolio() {
         "Chefs queue up using a UI overview to recieve an order. The chef then can play through over 10 minigames both 2D and 3D as they work through the steps of the recipe to prepare the meal!",
     },
     {
-      title: "Profile Editor",
-      img: "./kecaiProfileDemo.gif",
-      desc: "For Kecai, developed an editor for the user's profile with several components of customization.",
+      title: "Rogue-like Burger Game",
+      img: "./slorgsEateryDemo.gif",
+      desc: "Silly customers and strategic flexibility with dynamic progression.",
       details:
-        "User can edit their description, pronouns, background image, and much more. Something I liked that I was able to add was an editable two-color gradient the user can apply to their profile.",
+        "Developed a rogue-like cooking web game using JavaScript with a dynamic progression system. Engineered an algorithmic daily shop for strategic upgrades, while personally creating all visual assets.",
+      link: "https://slorg.club"
     },
   ];
 
@@ -174,10 +175,7 @@ export default function Portfolio() {
                 University of Missouri - Columbia
               </h3>
               <p className="text-lg font-medium">
-                BS in Computer Science, Minor in Business
-              </p>
-              <p className="text-default-500">
-                I am currently a senior and will be graduating in May 2026.
+                BS in Computer Science, Minor in Business - May 2026
               </p>
             </div>
           </Card>
