@@ -49,13 +49,13 @@ export default function Portfolio() {
       desc: "Silly customers and strategic flexibility with dynamic progression.",
       details:
         "Developed a rogue-like cooking web game using JavaScript with a dynamic progression system. Engineered an algorithmic daily shop for strategic upgrades, while personally creating all visual assets.",
-      link: "https://slorg.club/#/race"
+      link: "https://slorg.club/#/race",
     },
   ];
 
   const experiences = [
     {
-      company: "Danforth Plant Science Center",
+      company: "Danforth Plant Science",
       logo: "./images/danforthlogo2.webp",
       role: "Data Science Intern",
       period: "Mar 2022 - Jul 2022",
@@ -111,7 +111,7 @@ export default function Portfolio() {
     },
   ];
 
-  const highlighted_text = "text-cyan-200"
+  const highlighted_text = "text-cyan-200";
 
   const topRow = experiences.slice(0, 3);
   const bottomRow = experiences.slice(3);
@@ -124,37 +124,40 @@ export default function Portfolio() {
         className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12 py-20 gap-10"
       >
         <Card className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12 py-20 gap-10 ">
-        <div className="flex flex-col gap-6 max-w-lg">
-          <h1 className="text-2xl font-bold tracking-tight leading-tight">
-            Hello, I'm <span className={highlighted_text}>Micheal</span>
-          </h1>
-          <p className="text-lg text-default-600">
-            I've worked professionally in <span className={highlighted_text}>Software Engineering</span> and <span className={highlighted_text}>Game Development</span>{" "}
-            from C# architecture migrations to owning multiplayer role management systems in Lua.
-            I enjoy moving across different stacks, the technology changes but the problem solving is what keeps me hooked.
-            Currently looking for{" "}
-            <span className={highlighted_text}>full-time</span> and{" "}
-            <span className={highlighted_text}>contracting</span> positions.
-          </p>
-          <Button
-            as={Link}
-            href="#projects"
-            color="primary"
-            size="lg"
-            variant="solid"
-            className = "transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(45,110,235,0.8)] hover:-translate-y-1"
-          >
-            See My Work
-          </Button>
-        </div>
+          <div className="flex flex-col gap-6 max-w-lg">
+            <h1 className="text-2xl font-bold tracking-tight leading-tight">
+              Hello, I'm <span className={highlighted_text}>Micheal</span>
+            </h1>
+            <p className="text-lg text-default-600">
+              I've worked professionally in{" "}
+              <span className={highlighted_text}>Software Engineering</span> and{" "}
+              <span className={highlighted_text}>Game Development</span> from C#
+              architecture migrations to owning multiplayer role management
+              systems in Lua. I enjoy moving across different stacks, the
+              technology changes but the problem solving is what keeps me
+              hooked. Currently looking for{" "}
+              <span className={highlighted_text}>full-time</span> and{" "}
+              <span className={highlighted_text}>contracting</span> positions.
+            </p>
+            <Button
+              as={Link}
+              href="#projects"
+              color="primary"
+              size="lg"
+              variant="solid"
+              className="transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(45,110,235,0.8)] hover:-translate-y-1"
+            >
+              See My Work
+            </Button>
+          </div>
 
-        {/* Visual project image */}
-        <Image
-          alt="Featured project"
-          src="./ocean2.gif"
-          radius="lg"
-          className="shadow-lg w-full max-w-lg object-cover"
-        />
+          {/* Visual project image */}
+          <Image
+            alt="Featured project"
+            src="./ocean2.gif"
+            radius="lg"
+            className="shadow-lg w-full max-w-lg object-cover"
+          />
         </Card>
       </section>
 
@@ -166,18 +169,17 @@ export default function Portfolio() {
         <h2 className="text-4xl font-semibold text-center">
           Professional Experience
         </h2>
-
         <div className="w-full flex flex-col items-center gap-10">
           {/* ---------- TOP ROW: ALWAYS 3 ITEMS ---------- */}
           <div className="flex flex-wrap justify-center gap-6 w-full">
             {topRow.map((job, i) => (
               <Card
                 key={i}
-                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
+                className="group flex flex-col p-6 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
-                <div className="flex flex-col flex-1 items-center text-center">
+                <div className="flex flex-col flex-1 items-center text-center w-full">
                   <Image
                     alt={job.company}
                     src={job.logo}
@@ -197,6 +199,9 @@ export default function Portfolio() {
                   <p className="text-sm text-default-500 mt-auto pt-4">
                     {job.period}
                   </p>
+                  <div className="w-full flex justify-end mt-auto  pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
+                      &#8599;
+                    </div>
                 </div>
               </Card>
             ))}
@@ -207,11 +212,11 @@ export default function Portfolio() {
             {bottomRow.map((job, i) => (
               <Card
                 key={i}
-                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
+                className="group flex flex-col p-5 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
-                <div className="flex flex-col flex-1 items-center text-center">
+                <div className="flex flex-col flex-1 items-center text-center w-full">
                   <Image
                     alt={job.company}
                     src={job.logo}
@@ -231,6 +236,9 @@ export default function Portfolio() {
                   <p className="text-sm text-default-500 mt-auto pt-4">
                     {job.period}
                   </p>
+                    <div className="w-full flex justify-end mt-auto  pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
+                      &#8599;
+                    </div>
                 </div>
               </Card>
             ))}
@@ -238,14 +246,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-
       <section
         id="education"
         className="w-full max-w-6xl px-6 md:px-12 py-5 flex flex-col items-center gap-12"
       >
-        <h2 className="text-4xl font-semibold text-center">
-          Education
-        </h2>
+        <h2 className="text-4xl font-semibold text-center">Education</h2>
         <div className="w-full ">
           <Card className=" shadow-xl p-5 flex flex-col md:flex-row items-center gap-10">
             {/* School Logo */}
@@ -289,13 +294,13 @@ export default function Portfolio() {
 
                 <p className="text-default-600">
                   I developed an algorithm that plays audio as text shows up
-                  progressively, reminiscent of games like Animal Crossing. Every alphabetical letter
-                  is mapped to a specific sound and a specifc pitch. This way if
-                  the character says the same thing twice, it sounds like it! I
-                  also programmed the progression of pitch throughout sentences
-                  to make the speech sound more natural. All of this was to
-                  simulate (to a degree) what a language sounds like when
-                  spoken.
+                  progressively, reminiscent of games like Animal Crossing.
+                  Every alphabetical letter is mapped to a specific sound and a
+                  specifc pitch. This way if the character says the same thing
+                  twice, it sounds like it! I also programmed the progression of
+                  pitch throughout sentences to make the speech sound more
+                  natural. All of this was to simulate (to a degree) what a
+                  language sounds like when spoken.
                 </p>
               </div>
 
@@ -325,17 +330,21 @@ export default function Portfolio() {
               key={i}
               isPressable
               onPress={() => setSelectedProject(proj)}
-              className="transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer"
+              className="group flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer"
             >
               <Image
                 alt={proj.title}
                 src={proj.img}
                 radius="lg"
-                className="object-cover w-full h-64"
+                className="object-cover w-full h-64 shrink-0"
               />
-              <CardBody className="flex flex-col items-start gap-3 p-5">
+              <CardBody className="flex flex-col flex-1 items-start gap-3 p-5">
                 <h3 className="text-2xl font-semibold">{proj.title}</h3>
+
                 <p className="text-default-600 text-sm">{proj.desc}</p>
+                <div className="w-full flex justify-end mt-auto pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
+                  &#8599;
+                </div>
               </CardBody>
             </Card>
           ))}
@@ -350,7 +359,7 @@ export default function Portfolio() {
         scrollBehavior="inside"
         hideCloseButton
         classNames={{
-        base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
+          base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
         }}
       >
         <ModalContent>
@@ -376,7 +385,7 @@ export default function Portfolio() {
                     color="primary"
                     variant="solid"
                     target="_blank"
-                    className = "transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_20px_rgba(45,110,235,0.6)]"
+                    className="transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_20px_rgba(45,110,235,0.6)]"
                   >
                     See More
                   </Button>
@@ -397,7 +406,7 @@ export default function Portfolio() {
         scrollBehavior="inside"
         hideCloseButton
         classNames={{
-        base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
+          base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
         }}
       >
         <ModalContent>
