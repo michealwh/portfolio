@@ -52,7 +52,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-background to-default-100">
+          <main className="flex flex-col items-center justify-center gap-16 py-12 px-6 md:px-16 bg-gradient-to-b from-slate-950 to-slate-900">
             {children}
             
         <Footer/>

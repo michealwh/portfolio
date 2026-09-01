@@ -30,7 +30,7 @@ export default function Portfolio() {
     {
       title: "Reactive Particles",
       img: "./boidDemo.gif",
-      desc: "Developed a boid algorithm that react's to the player's avatar.",
+      desc: "Developed a boid algorithm that react's to other nodes along with the player's avatar.",
       details:
         "The boid algorithm rewards the particles based off several rules which result in them randomly and smoothly flowing between one another. The boids will attempt to stay in their designated zone and avoid the player.",
       link: "https://www.roblox.com/games/18242072567/Boid-Particle-Demo",
@@ -41,7 +41,7 @@ export default function Portfolio() {
       img: "./kecaiMixer.gif",
       desc: "For Kecai, created a complete cooking system with a chef queue, recipes, and minigames.",
       details:
-        "Chefs queue up using a UI overview to recieve an order. The chef then can play through over 10 minigames both 2D and 3D as they work through the steps of the recipe to prepare the meal!",
+        "Chefs queue up using a UI overview to recieve an order. The chef then can play through over 10 minigames both 2D and 3D as they work through the steps of the recipe to prepare the meal.",
     },
     {
       title: "Rogue-like Burger Game",
@@ -49,7 +49,7 @@ export default function Portfolio() {
       desc: "Silly customers and strategic flexibility with dynamic progression.",
       details:
         "Developed a rogue-like cooking web game using JavaScript with a dynamic progression system. Engineered an algorithmic daily shop for strategic upgrades, while personally creating all visual assets.",
-      link: "https://slorg.club"
+      link: "https://slorg.club/#/race"
     },
   ];
 
@@ -79,9 +79,9 @@ export default function Portfolio() {
     {
       company: "World Wide Technology",
       logo: "./images/wwtlogo2.webp",
-      role: "Full-stack Developer Intern",
+      role: "Full-Stack Developer Intern",
       period: "May 2024 - Aug 2024",
-      desc: "Programmed in Vue along with using SQL for backend support.",
+      desc: "Programmed in Vue along with writing raw SQL for backend support.",
       bullets: [
         "Implemented new features for WWT's corporate website using VueJS, including a modernized research footer.",
         "Supported backend development by writing and running SQL scripts for efficient internal page creation.",
@@ -111,6 +111,8 @@ export default function Portfolio() {
     },
   ];
 
+  const highlighted_text = "text-cyan-200"
+
   const topRow = experiences.slice(0, 3);
   const bottomRow = experiences.slice(3);
 
@@ -121,23 +123,26 @@ export default function Portfolio() {
         id="about"
         className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12 py-20 gap-10"
       >
+        <Card className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6 md:px-12 py-20 gap-10 ">
         <div className="flex flex-col gap-6 max-w-lg">
-          <h1 className="text-5xl font-bold tracking-tight leading-tight">
-            Hello, I'm <span className="text-yellow">Micheal</span> ☀️
+          <h1 className="text-2xl font-bold tracking-tight leading-tight">
+            Hello, I'm <span className={highlighted_text}>Micheal</span>
           </h1>
           <p className="text-lg text-default-600">
-            I have lots of experience with Software Engineering and Game
-            Development and I'm extremely passionate about my work every
-            step of the way! I am currently looking for{" "}
-            <span className="text-yellow">full-time</span> and{" "}
-            <span className="text-yellow">contracting</span> positions.
+            I've worked professionally in <span className={highlighted_text}>Software Engineering</span> and <span className={highlighted_text}>Game Development</span>{" "}
+            from C# architecture migrations to owning multiplayer role management systems in Lua.
+            I enjoy moving across different stacks, the technology changes but the problem solving is what keeps me hooked.
+            Currently looking for{" "}
+            <span className={highlighted_text}>full-time</span> and{" "}
+            <span className={highlighted_text}>contracting</span> positions.
           </p>
           <Button
             as={Link}
             href="#projects"
             color="primary"
             size="lg"
-            variant="shadow"
+            variant="solid"
+            className = "transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(45,110,235,0.8)] hover:-translate-y-1"
           >
             See My Work
           </Button>
@@ -150,42 +155,13 @@ export default function Portfolio() {
           radius="lg"
           className="shadow-lg w-full max-w-lg object-cover"
         />
-      </section>
-
-      <section
-        id="education"
-        className="w-full py-20 flex justify-center bg-background"
-      >
-        <div className="w-full max-w-6xl px-6 md:px-12">
-          <Card className="bg-content2 shadow-xl p-10 flex flex-col md:flex-row items-center gap-10">
-            {/* School Logo */}
-            <div className="flex-shrink-0">
-              <Image
-                alt="University Logo"
-                src="./images/mizzoulogo.webp" // Replace with your logo path
-                radius="lg"
-                className="w-48 h-48 object-contain"
-              />
-            </div>
-
-            {/* Education Info */}
-            <div className="flex flex-col gap-4 text-center md:text-left max-w-3xl">
-              <h2 className="text-4xl font-bold">Education</h2>
-              <h3 className="text-2xl font-semibold">
-                University of Missouri - Columbia
-              </h3>
-              <p className="text-lg font-medium">
-                BS in Computer Science, Minor in Business - May 2026
-              </p>
-            </div>
-          </Card>
-        </div>
+        </Card>
       </section>
 
       {/* ===== EXPERIENCE SECTION ===== */}
       <section
         id="experience"
-        className="w-full max-w-6xl px-6 md:px-12 py-20 flex flex-col items-center gap-12"
+        className="w-full max-w-6xl px-6 md:px-12 py-5 flex flex-col items-center gap-12"
       >
         <h2 className="text-4xl font-semibold text-center">
           Professional Experience
@@ -197,7 +173,7 @@ export default function Portfolio() {
             {topRow.map((job, i) => (
               <Card
                 key={i}
-                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
@@ -231,7 +207,7 @@ export default function Portfolio() {
             {bottomRow.map((job, i) => (
               <Card
                 key={i}
-                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
+                className="flex flex-col p-6 h-[280px] w-[280px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer items-center"
                 isPressable
                 onPress={() => setSelectedJob(job)}
               >
@@ -262,14 +238,47 @@ export default function Portfolio() {
         </div>
       </section>
 
+
+      <section
+        id="education"
+        className="w-full max-w-6xl px-6 md:px-12 py-5 flex flex-col items-center gap-12"
+      >
+        <h2 className="text-4xl font-semibold text-center">
+          Education
+        </h2>
+        <div className="w-full ">
+          <Card className=" shadow-xl p-5 flex flex-col md:flex-row items-center gap-10">
+            {/* School Logo */}
+            <div className="flex-shrink-0">
+              <Image
+                alt="University Logo"
+                src="./images/mizzoulogo.webp" // Replace with your logo path
+                radius="sm"
+                className="w-24 h-24 object-contain"
+              />
+            </div>
+
+            {/* Education Info */}
+            <div className="flex flex-col gap-4 text-center md:text-left max-w-3xl">
+              <h4 className="text-2xl font-semibold">
+                University of Missouri - Columbia
+              </h4>
+              <p className="text-md font-medium">
+                BS in Computer Science, Minor in Business - Graduated: May 2026
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* ===== PROJECTS SECTION ===== */}
       <section
         id="projects"
-        className="w-full max-w-6xl px-6 md:px-12 py-20 flex flex-col items-center gap-12"
+        className="w-full max-w-6xl px-6 md:px-12 py-5 flex flex-col items-center gap-12"
       >
         <h2 className="text-4xl font-semibold text-center">Projects</h2>
 
-        <Card className="w-full p-6 rounded-2xl bg-content2">
+        <Card className="w-full p-6 rounded-2xl">
           <CardBody>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {/* LEFT COLUMN – TITLE + DESCRIPTION */}
@@ -316,7 +325,7 @@ export default function Portfolio() {
               key={i}
               isPressable
               onPress={() => setSelectedProject(proj)}
-              className="hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 cursor-pointer"
             >
               <Image
                 alt={proj.title}
@@ -339,6 +348,10 @@ export default function Portfolio() {
         onClose={() => setSelectedProject(null)}
         size="lg"
         scrollBehavior="inside"
+        hideCloseButton
+        classNames={{
+        base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
+        }}
       >
         <ModalContent>
           {(onClose) => (
@@ -361,8 +374,9 @@ export default function Portfolio() {
                     as={Link}
                     href={selectedProject.link}
                     color="primary"
-                    variant="shadow"
+                    variant="solid"
                     target="_blank"
+                    className = "transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_20px_rgba(45,110,235,0.6)]"
                   >
                     See More
                   </Button>
@@ -377,10 +391,14 @@ export default function Portfolio() {
       </Modal>
 
       <Modal
-        isOpen={!!selectedJob}
+        isOpen={selectedJob}
         onClose={() => setSelectedJob(null)}
         size="lg"
         scrollBehavior="inside"
+        hideCloseButton
+        classNames={{
+        base: "shadow-[0_0_40px_rgba(37,99,235,0.3)]",
+        }}
       >
         <ModalContent>
           {(onClose) => (
