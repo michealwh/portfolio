@@ -199,9 +199,22 @@ export default function Portfolio() {
                   <p className="text-sm text-default-500 mt-auto pt-4">
                     {job.period}
                   </p>
-                  <div className="w-full flex justify-end mt-auto  pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
-                      &#8599;
-                    </div>
+                  <div className="w-full flex justify-end mt-auto pt-4 text-default-300 group-hover:text-primary transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -236,9 +249,22 @@ export default function Portfolio() {
                   <p className="text-sm text-default-500 mt-auto pt-4">
                     {job.period}
                   </p>
-                    <div className="w-full flex justify-end mt-auto  pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
-                      &#8599;
-                    </div>
+                  <div className="w-full flex justify-end mt-auto pt-4 text-default-300 group-hover:text-primary transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -342,9 +368,22 @@ export default function Portfolio() {
                 <h3 className="text-2xl font-semibold">{proj.title}</h3>
 
                 <p className="text-default-600 text-sm">{proj.desc}</p>
-                <div className="w-full flex justify-end mt-auto pt-4 text-default-300 group-hover:text-primary transition-colors text-xl">
-                  &#8599;
-                </div>
+                <div className="w-full flex justify-end mt-auto pt-4 text-default-300 group-hover:text-primary transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </div>
               </CardBody>
             </Card>
           ))}
